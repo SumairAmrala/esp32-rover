@@ -9,7 +9,7 @@ static unsigned long lastBatteryUpdate = 0;
 static unsigned long lastSpeedUpdate = 0;
 
 static const unsigned long speedDelay = 20;
-static const unsigned long connectionTimeout = 2000;
+static const unsigned long connectionTimeout = 300;
 
 static float vBattery = 0;
 static float vOut = 0;
