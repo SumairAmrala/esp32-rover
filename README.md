@@ -234,8 +234,17 @@ All grounds connected together.
 ## Battery Monitoring
 
 ### v2.0
-Resistor divider on GPIO10 scales 7.4V battery to 3.3V ADC range.
-ESP32-S3 ADC: 12-bit, 0–4095. Vbattery = Vout × 3.2.
+Resistor divider on GPIO10 scales 7.4V battery to 3.3V ADC range by using a voltage divider: 
+
+**Voltage divider:**
+R1 = 20kΩ (top), R2 = 10kΩ (bottom)
+Vout = Vbattery × R2 / (R1 + R2)
+Vout = Vbattery × 10k / (30k) = Vbattery / 3
+
+ESP32-S3 ADC is 12-bit (0–4095). Firmware recovers actual battery voltage: Vbattery = Vout × 3.2 to reverse the scaled voltage divider value.
+
+The multiplier is 3.2 rather than exactly 3.0 to compensate for a measured offset error observed during calibration against a known voltage reference.
+
 Battery percentage mapped between 6.0V (0%) and 8.4V (100%) for 2S 18650 pack.
 
 ### v1.0 / v1.1
