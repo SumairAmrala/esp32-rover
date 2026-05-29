@@ -7,7 +7,7 @@ Built from scratch as part of a personal electronics and robotics learning roadm
 ## Demo
 
 ### v2.0: ESP-NOW Joystick Controlled Rover
-*Demo GIF coming soon: hardware repair in progress*
+![Rover demo](images/v2/rover2_demo.gif)
 
 ### v1.0 / 1.1: WiFi HTTP Rover
 ![Rover demo](images/v1/rover_demo.gif)
